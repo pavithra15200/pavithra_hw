@@ -1,1 +1,80 @@
+select
+	count(result_status)
+	from
+	day_2_exam
+	where result_status = 'Pass'
+
+select
+ ROUND(avg(total_score) ,2)
+from
+day_2_exam
+where result_status = 'Fail'
+
+select
+max(total_score) as  maximum_score
+from
+day_2_exam
+
+select
+min(total_score) as minimum_score
+from
+day_2_exam
+where result_status = 'Pass'
+
+select
+distinct(result_status),
+count(total_score)
+from day_2_exam
+where total_score =35 or total_score >35
+group by result_status
+
+select
+distinct(result_status),
+ROUND(avg(total_score),2)
+from
+day_2_exam
+where total_score between 30 and 40
+group by result_status
+
+select
+distinct(result_status),
+count(total_score)
+from
+day_2_exam
+where total_score =35 or total_score >35
+group by result_status
+
+select
+distinct(result_status),
+round(avg(total_score),2)
+from day_2_exam
+where total_score between 30 and 40
+group by result_status
+
+
+select
+distinct(result_status),
+min(total_score)
+from day_2_exam
+group by 1
+order by 1 desc
+
+select
+distinct(result_status),
+count(result_status),
+ROUND(avg(total_score),2),
+max(total_score) as highest_score,
+min(total_score) as lowest_score
+from day_2_exam
+where total_score > 40
+group by 1
+order by 1 desc
+
+select
+distinct(result_status),
+count(total_score)
+from day_2_exam
+where total_score >30 and total_score <40
+group by 1
+
 
